@@ -1,6 +1,1 @@
 theme: jekyll-theme-architect
-encding: utf-8
-plugins: 
-  - jekyll-github-metadata
-github : [metadata]
-repository: yuki0317/Ensyu2020S1
