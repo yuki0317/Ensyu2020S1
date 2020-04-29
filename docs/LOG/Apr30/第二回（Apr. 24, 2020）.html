@@ -1,0 +1,148 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- common.css -->
+      <style>* {-webkit-tap-highlight-color: rgba(0,0,0,0);}html {-webkit-text-size-adjust: none;}body {font-family: -apple-system, Helvetica, Arial, sans-serif;margin: 0;padding: 20px;color: #333;word-wrap: break-word;}h1, h2, h3, h4, h5, h6 {line-height: 1.1;}img {max-width: 100% !important;height: auto;}blockquote {margin: 0;padding: 0 15px;color: #777;border-left: 4px solid #ddd;}hr {background-color: #ddd;border: 0;height: 1px;margin: 15px 0;}code {font-family: Menlo, Consolas, 'Ubuntu Mono', Monaco, 'source-code-pro', monospace;line-height: 1.4;margin: 0;padding: 0.2em 0;font-size: 90%;background-color: rgba(0,0,0,0.04);border-radius: 3px;}pre > code {margin: 0;padding: 0;font-size: 100%;word-break: normal;background: transparent;border: 0;}ol {list-style-type: decimal;}ol ol, ul ol {list-style-type: lower-latin;}ol ol ol, ul ol ol, ul ul ol, ol ul ol {list-style-type: lower-roman;}table {border-spacing: 0;border-collapse: collapse;margin-top: 0;margin-bottom: 16px;}table th {font-weight: bold;}table th, table td {padding: 6px 13px;border: 1px solid #ddd;}table tr {border-top: 1px solid #ccc;}table tr:nth-child(even) {background-color: #f8f8f8;}input[type="checkbox"] {cursor: default;margin-right: 0.5em;font-size: 13px;}.task-list-item {list-style-type: none;}.task-list-item+.task-list-item {margin-top: 3px;}.task-list-item input {float: left;margin: 0.3em 1em 0.25em -1.6em;vertical-align: middle;}#tag-field {margin: 8px 2px 10px;}#tag-field .tag {display: inline-block;background: #cadff3;border-radius: 4px;padding: 1px 8px;color: black;font-size: 12px;margin-right: 10px;line-height: 1.4;}</style>
+      <!-- ace-static.css -->
+      <style>.ace_static_highlight {white-space: pre-wrap;}.ace_static_highlight .ace_gutter {width: 2em;text-align: right;padding: 0 3px 0 0;margin-right: 3px;}.ace_static_highlight.ace_show_gutter > .ace_line {padding-left: 2.6em;}.ace_static_highlight .ace_line {position: relative;}.ace_static_highlight .ace_gutter-cell {-moz-user-select: -moz-none;-khtml-user-select: none;-webkit-user-select: none;user-select: none;top: 0;bottom: 0;left: 0;position: absolute;}.ace_static_highlight .ace_gutter-cell:before {content: counter(ace_line, decimal);counter-increment: ace_line;}.ace_static_highlight {counter-reset: ace_line;}</style>
+      <style>.ace-tomorrow-night-eighties .ace_gutter {background: #272727;color: #CCC}.ace-tomorrow-night-eighties .ace_print-margin {width: 1px;background: #272727}.ace-tomorrow-night-eighties {background-color: #2D2D2D;color: #CCCCCC}.ace-tomorrow-night-eighties .ace_constant.ace_other,.ace-tomorrow-night-eighties .ace_cursor {color: #CCCCCC}.ace-tomorrow-night-eighties .ace_marker-layer .ace_selection {background: #515151}.ace-tomorrow-night-eighties.ace_multiselect .ace_selection.ace_start {box-shadow: 0 0 3px 0px #2D2D2D;}.ace-tomorrow-night-eighties .ace_marker-layer .ace_step {background: rgb(102, 82, 0)}.ace-tomorrow-night-eighties .ace_marker-layer .ace_bracket {margin: -1px 0 0 -1px;border: 1px solid #6A6A6A}.ace-tomorrow-night-bright .ace_stack {background: rgb(66, 90, 44)}.ace-tomorrow-night-eighties .ace_marker-layer .ace_active-line {background: #393939}.ace-tomorrow-night-eighties .ace_gutter-active-line {background-color: #393939}.ace-tomorrow-night-eighties .ace_marker-layer .ace_selected-word {border: 1px solid #515151}.ace-tomorrow-night-eighties .ace_invisible {color: #6A6A6A}.ace-tomorrow-night-eighties .ace_keyword,.ace-tomorrow-night-eighties .ace_meta,.ace-tomorrow-night-eighties .ace_storage,.ace-tomorrow-night-eighties .ace_storage.ace_type,.ace-tomorrow-night-eighties .ace_support.ace_type {color: #CC99CC}.ace-tomorrow-night-eighties .ace_keyword.ace_operator {color: #66CCCC}.ace-tomorrow-night-eighties .ace_constant.ace_character,.ace-tomorrow-night-eighties .ace_constant.ace_language,.ace-tomorrow-night-eighties .ace_constant.ace_numeric,.ace-tomorrow-night-eighties .ace_keyword.ace_other.ace_unit,.ace-tomorrow-night-eighties .ace_support.ace_constant,.ace-tomorrow-night-eighties .ace_variable.ace_parameter {color: #F99157}.ace-tomorrow-night-eighties .ace_invalid {color: #CDCDCD;background-color: #F2777A}.ace-tomorrow-night-eighties .ace_invalid.ace_deprecated {color: #CDCDCD;background-color: #CC99CC}.ace-tomorrow-night-eighties .ace_fold {background-color: #6699CC;border-color: #CCCCCC}.ace-tomorrow-night-eighties .ace_entity.ace_name.ace_function,.ace-tomorrow-night-eighties .ace_support.ace_function,.ace-tomorrow-night-eighties .ace_variable {color: #6699CC}.ace-tomorrow-night-eighties .ace_support.ace_class,.ace-tomorrow-night-eighties .ace_support.ace_type {color: #FFCC66}.ace-tomorrow-night-eighties .ace_heading,.ace-tomorrow-night-eighties .ace_markup.ace_heading,.ace-tomorrow-night-eighties .ace_string {color: #99CC99}.ace-tomorrow-night-eighties .ace_comment {color: #999999}.ace-tomorrow-night-eighties .ace_entity.ace_name.ace_tag,.ace-tomorrow-night-eighties .ace_entity.ace_other.ace_attribute-name,.ace-tomorrow-night-eighties .ace_meta.ace_tag,.ace-tomorrow-night-eighties .ace_variable {color: #F2777A}.ace-tomorrow-night-eighties .ace_indent-guide {background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAEklEQVQImWPQ09NrYAgMjP4PAAtGAwchHMyAAAAAAElFTkSuQmCC) right repeat-y}</style>
+      <!-- export.css -->
+      <style>
+        body{margin:0 auto;max-width:800px;line-height:1.4}
+        #nav{margin:5px 0 10px;font-size:15px}
+        #titlearea{border-bottom:1px solid #ccc;font-size:17px;padding:10px 0;}
+        #contentarea{font-size:15px;margin:16px 0}
+        .cell{outline:0;min-height:20px;margin:5px 0;padding:5px 0;}
+        .code-cell{font-family:Menlo,Consolas,'Ubuntu Mono',Monaco,'source-code-pro',monospace;font-size:12px;}
+        .latex-cell{white-space:pre-wrap;}
+      </style>
+      <!-- User CSS -->
+      <style> .text-cell {font-size: 15px;}.code-cell {font-size: 12px;}.markdown-cell {font-size: 15px;}.latex-cell {font-size: 15px;}</style>
+    </head>
+    <body>
+      <div id="nav"><div>Next: <a href='第一回（Apr. 22, 2020）.html'>第一回（Apr. 22, 2020）</a>, Previous: <a href='第三回（Apr. 28, 2020）.html'>第三回（Apr. 28, 2020）</a>, Up: <a href='index.html'>Index</a></div></div>
+      <div id="titlearea">
+        <h2>第二回（Apr. 24, 2020）</h2>
+      </div>
+      <div id="contentarea"><div class="cell markdown-cell"><h1>本日の実習内容</h1>
+<ol>
+<li>画面共有の環境設定</li>
+<li>DSMを用いた理論波形計算</li>
+<li>計算結果(SPCファイル)をSAC形式へ変換（SACは時系列データ特に地震波形のプロット・解析のためのツール）</li>
+</ol>
+</div><div class="cell markdown-cell"><h1>実習</h1>
+<p><a href="https://join.skype.com/YsHD0ReeJ1xa">Skype会議</a>15:00~18:20</p>
+<h2>1. 画面共有設定</h2>
+<ul>
+<li>waveは学内ネットワークにアクセスするための踏み台サーバ、ajilloは高速計算サーバ</li>
+<li>画面共有のためのサーバmariejoisにアカウント作成（済み → pw変更）</li>
+<li>VNC server起動（<strong>ポート番号注意</strong>）<br>
+<code>vncserver -geometry 800x600 :"port number"</code></li>
+<li>ローカルから以下のコマンドで再ログイン<br>
+<code>ssh -L 5901:'hostname':5907 'username'@wave.eps.s.u-tokyo.ac.jp</code></li>
+<li>この場合、'5901'はローカルマシンのポート番号、'hostname'は共有したいマシンの名前. '5907'はそのマシンで画面共有のために開いているポートの番号。</li>
+<li>ローカルマシンがwindowsの場合VNCviewer等のソフトウェアが必要. VNCserver欄に'localhost:5901'等と入力してConnect</li>
+<li>Macの場合はFinderからサーバへ接続. サーバアドレスはvnc://localhost:5901等</li>
+<li>成功すると以下のような画面が表示される<br>
+<img src="resources/FBD07FF5152ED277E40B88D2F1E6C5A9.jpg" alt="IMAGE" width="1279" height="788"></li>
+</ul>
+</div><div class="cell markdown-cell"><hr>
+<hr>
+</div><div class="cell markdown-cell"><h2>2. 理論波形計算</h2>
+<h3>2.1 DSMインプットファイルの中身</h3>
+<ul>
+<li>tlen: 地震波形の時間長</li>
+<li>np: Number of points</li>
+<li>構造の情報は、ある半径区間において多項式形式で表される.</li>
+<li>例えばある半径<span class="MathJax" id="MathJax-Element-3-Frame" role="textbox" aria-readonly="true" style=""><nobr><span class="math" id="MathJax-Span-1" style="width: 0.516em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.45em; height: 0px; font-size: 111%;"><span style="position: absolute; clip: rect(1.924em, 1000em, 2.703em, -0.462em); top: -2.534em; left: 0em;"><span class="mrow" id="MathJax-Span-2"><span class="mi" id="MathJax-Span-3" style="font-family: STIXGeneral-Italic;">r<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.023em;"></span></span></span><span style="display: inline-block; width: 0px; height: 2.534em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.615em; vertical-align: -0.063em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-3">r</script>での密度<span class="MathJax" id="MathJax-Element-4-Frame" role="textbox" aria-readonly="true" style=""><nobr><span class="math" id="MathJax-Span-4" style="width: 0.641em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.563em; height: 0px; font-size: 111%;"><span style="position: absolute; clip: rect(1.924em, 1000em, 2.908em, -0.547em); top: -2.534em; left: 0em;"><span class="mrow" id="MathJax-Span-5"><span class="mi" id="MathJax-Span-6" style="font-family: STIXGeneral-Italic;">ρ</span></span><span style="display: inline-block; width: 0px; height: 2.534em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.842em; vertical-align: -0.29em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-4">\rho</script>は以下のように表される。<br>
+<div class="MathJax_Display" role="textbox" aria-readonly="true" style="text-align: center;"><span class="MathJax" id="MathJax-Element-5-Frame" style=""><nobr><span class="math" id="MathJax-Span-7" style="width: 22.141em; display: inline-block;"><span style="display: inline-block; position: relative; width: 19.932em; height: 0px; font-size: 111%;"><span style="position: absolute; clip: rect(1.474em, 1000em, 2.908em, -0.547em); top: -2.534em; left: 0em;"><span class="mrow" id="MathJax-Span-8"><span class="mi" id="MathJax-Span-9" style="font-family: STIXGeneral-Italic;">ρ</span><span class="mo" id="MathJax-Span-10" style="font-family: STIXGeneral-Regular;">(</span><span class="mi" id="MathJax-Span-11" style="font-family: STIXGeneral-Italic;">r<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.023em;"></span></span><span class="texatom" id="MathJax-Span-12"><span class="mrow" id="MathJax-Span-13"><span class="mo" id="MathJax-Span-14" style="font-family: STIXGeneral-Regular;">/</span></span></span><span class="mi" id="MathJax-Span-15" style="font-family: STIXGeneral-Italic;">R</span><span class="mo" id="MathJax-Span-16" style="font-family: STIXGeneral-Regular;">)</span><span class="mo" id="MathJax-Span-17" style="font-family: STIXGeneral-Regular; padding-left: 0.313em;">=</span><span class="mi" id="MathJax-Span-18" style="font-family: STIXGeneral-Italic; padding-left: 0.313em;">a</span><span class="mo" id="MathJax-Span-19" style="font-family: STIXGeneral-Regular; padding-left: 0.25em;">+</span><span class="mi" id="MathJax-Span-20" style="font-family: STIXGeneral-Italic; padding-left: 0.25em;">b</span><span class="mo" id="MathJax-Span-21" style="font-family: STIXGeneral-Regular; padding-left: 0.25em;">∗</span><span class="mo" id="MathJax-Span-22" style="font-family: STIXGeneral-Regular; padding-left: 0.25em;">(</span><span class="mi" id="MathJax-Span-23" style="font-family: STIXGeneral-Italic;">r<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.023em;"></span></span><span class="texatom" id="MathJax-Span-24"><span class="mrow" id="MathJax-Span-25"><span class="mo" id="MathJax-Span-26" style="font-family: STIXGeneral-Regular;">/</span></span></span><span class="mi" id="MathJax-Span-27" style="font-family: STIXGeneral-Italic;">R</span><span class="msubsup" id="MathJax-Span-28"><span style="display: inline-block; position: relative; width: 0.807em; height: 0px;"><span style="position: absolute; clip: rect(1.689em, 1000em, 2.88em, -0.478em); top: -2.534em; left: 0em;"><span class="mo" id="MathJax-Span-29" style="font-family: STIXGeneral-Regular;">)</span><span style="display: inline-block; width: 0px; height: 2.534em;"></span></span><span style="position: absolute; top: -2.721em; left: 0.338em;"><span class="mn" id="MathJax-Span-30" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">1</span><span style="display: inline-block; width: 0px; height: 2.309em;"></span></span></span></span><span class="mo" id="MathJax-Span-31" style="font-family: STIXGeneral-Regular; padding-left: 0.25em;">+</span><span class="mi" id="MathJax-Span-32" style="font-family: STIXGeneral-Italic; padding-left: 0.25em;">c</span><span class="mo" id="MathJax-Span-33" style="font-family: STIXGeneral-Regular; padding-left: 0.25em;">∗</span><span class="mo" id="MathJax-Span-34" style="font-family: STIXGeneral-Regular; padding-left: 0.25em;">(</span><span class="mi" id="MathJax-Span-35" style="font-family: STIXGeneral-Italic;">r<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.023em;"></span></span><span class="texatom" id="MathJax-Span-36"><span class="mrow" id="MathJax-Span-37"><span class="mo" id="MathJax-Span-38" style="font-family: STIXGeneral-Regular;">/</span></span></span><span class="mi" id="MathJax-Span-39" style="font-family: STIXGeneral-Italic;">R</span><span class="msubsup" id="MathJax-Span-40"><span style="display: inline-block; position: relative; width: 0.807em; height: 0px;"><span style="position: absolute; clip: rect(1.689em, 1000em, 2.88em, -0.478em); top: -2.534em; left: 0em;"><span class="mo" id="MathJax-Span-41" style="font-family: STIXGeneral-Regular;">)</span><span style="display: inline-block; width: 0px; height: 2.534em;"></span></span><span style="position: absolute; top: -2.721em; left: 0.338em;"><span class="mn" id="MathJax-Span-42" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">2</span><span style="display: inline-block; width: 0px; height: 2.309em;"></span></span></span></span><span class="mo" id="MathJax-Span-43" style="font-family: STIXGeneral-Regular; padding-left: 0.25em;">+</span><span class="mi" id="MathJax-Span-44" style="font-family: STIXGeneral-Italic; padding-left: 0.25em;">d<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.027em;"></span></span><span class="mo" id="MathJax-Span-45" style="font-family: STIXGeneral-Regular; padding-left: 0.25em;">∗</span><span class="mo" id="MathJax-Span-46" style="font-family: STIXGeneral-Regular; padding-left: 0.25em;">(</span><span class="mi" id="MathJax-Span-47" style="font-family: STIXGeneral-Italic;">r<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.023em;"></span></span><span class="texatom" id="MathJax-Span-48"><span class="mrow" id="MathJax-Span-49"><span class="mo" id="MathJax-Span-50" style="font-family: STIXGeneral-Regular;">/</span></span></span><span class="mi" id="MathJax-Span-51" style="font-family: STIXGeneral-Italic;">R</span><span class="msubsup" id="MathJax-Span-52"><span style="display: inline-block; position: relative; width: 0.807em; height: 0px;"><span style="position: absolute; clip: rect(1.689em, 1000em, 2.88em, -0.478em); top: -2.534em; left: 0em;"><span class="mo" id="MathJax-Span-53" style="font-family: STIXGeneral-Regular;">)</span><span style="display: inline-block; width: 0px; height: 2.534em;"></span></span><span style="position: absolute; top: -2.721em; left: 0.338em;"><span class="mn" id="MathJax-Span-54" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">3</span><span style="display: inline-block; width: 0px; height: 2.309em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.534em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 1.341em; vertical-align: -0.29em;"></span></span></nobr></span></div><script type="math/tex; mode=display" id="MathJax-Element-5">\rho(r/R) = a + b*(r/R)^1 + c*(r/R)^2 + d*(r/R)^3</script><br>
+ここで<span class="MathJax" id="MathJax-Element-6-Frame" role="textbox" aria-readonly="true" style=""><nobr><span class="math" id="MathJax-Span-55" style="width: 0.703em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.619em; height: 0px; font-size: 111%;"><span style="position: absolute; clip: rect(1.712em, 1000em, 2.703em, -0.52em); top: -2.534em; left: 0em;"><span class="mrow" id="MathJax-Span-56"><span class="mi" id="MathJax-Span-57" style="font-family: STIXGeneral-Italic;">R</span></span><span style="display: inline-block; width: 0px; height: 2.534em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.85em; vertical-align: -0.063em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-6">R</script>は地球半径で<span class="MathJax" id="MathJax-Element-7-Frame" role="textbox" aria-readonly="true" style=""><nobr><span class="math" id="MathJax-Span-58" style="width: 4.453em; display: inline-block;"><span style="display: inline-block; position: relative; width: 3.998em; height: 0px; font-size: 111%;"><span style="position: absolute; clip: rect(1.681em, 1000em, 2.717em, -0.52em); top: -2.534em; left: 0em;"><span class="mrow" id="MathJax-Span-59"><span class="mi" id="MathJax-Span-60" style="font-family: STIXGeneral-Italic;">R</span><span class="mo" id="MathJax-Span-61" style="font-family: STIXGeneral-Regular; padding-left: 0.313em;">=</span><span class="mn" id="MathJax-Span-62" style="font-family: STIXGeneral-Regular; padding-left: 0.313em;">6371</span></span><span style="display: inline-block; width: 0px; height: 2.534em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.9em; vertical-align: -0.078em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-7">R=6371</script>.</li>
+<li>SHとPSVでは構造layerの数等が異なるので注意.</li>
+<li>震源パラメータは、震源重心位置の半径と緯度、経度、モーメントテンソル解</li>
+<li>nr: 観測点の数</li>
+<li>観測点パラメータ緯度、経度の順</li>
+<li>出力ファイルリスト</li>
+</ul>
+<h3>2.2 DSM実行</h3>
+<ul>
+<li>MPI（並列計算）実行<br>
+<code>mpirun -n 4 mpi-tish &lt; MIASP_SH.inf</code><br>
+ここでは/mnt/lasagna/suzuki/Ensyu2020/structure/MIASP_SH.inf<br>
+/mnt/lasagna/suzuki/Ensyu2020/structure/MIASP_PSV.infを用いる.<br>
+*<strong>実習終了後に上のサンプルファイルをtlen=3276.8, np=1024に変更しました. また出力ファイル名も変更しました. 実習中に計算してもらった出力ファイル名では、kibraryの仕様の関係でSPC_SACが実行できない可能性があったので. TAが試したところ4並列(-n 4)で実行してせいぜい5分くらいで終わると思います. 時間があれば試してみてください.</strong></li>
+</ul>
+<h3>2.3 計算結果(*.spcファイル)を時系SAC形式(*.[R,T,Z]s)に変換</h3>
+<ul>
+<li>演習ではTAが用意したサンプル(/mnt/lasagna/suzuki/Ensyu2020/samplespc)で試しました.</li>
+</ul>
+<h4>(i) 事前準備</h4>
+<ol>
+<li><a href="https://github.com/kensuke1984/Kibrary">Kibray</a>からkibraryをインストール.</li>
+<li>.bash_profileに以下のおまじないを貼り付ける.</li>
+</ol>
+<pre><div class="ace-tomorrow-night-eighties"><div class="ace_static_highlight" style="counter-reset:ace_line 0"><div class="ace_line">export PATH=/home/???/Kibrary/bin:$PATH
+</div><div class="ace_line">export CLASSPATH=/home/???/Kibrary/bin/kibrary-0.4.8.jar:$CLASSPATH
+</div></div></div></pre>
+<h4>(ii) *.spcの変換</h4>
+<ol>
+<li>SPC_SACを実行する.</li>
+</ol>
+<pre><div class="ace-tomorrow-night-eighties"><div class="ace_static_highlight" style="counter-reset:ace_line 0"><div class="ace_line">kibrary_property #<span class="ace_cjk" style="width:NaNpx">実</span><span class="ace_cjk" style="width:NaNpx">行</span><span class="ace_cjk" style="width:NaNpx">す</span><span class="ace_cjk" style="width:NaNpx">る</span><span class="ace_cjk" style="width:NaNpx">と</span><span class="ace_cjk" style="width:NaNpx">リ</span><span class="ace_cjk" style="width:NaNpx">ス</span><span class="ace_cjk" style="width:NaNpx">ト</span><span class="ace_cjk" style="width:NaNpx">が</span><span class="ace_cjk" style="width:NaNpx">表</span><span class="ace_cjk" style="width:NaNpx">示</span><span class="ace_cjk" style="width:NaNpx">さ</span><span class="ace_cjk" style="width:NaNpx">れ</span><span class="ace_cjk" style="width:NaNpx">る</span><span class="ace_cjk" style="width:NaNpx">の</span><span class="ace_cjk" style="width:NaNpx">で</span>SPC_SAC(14)<span class="ace_cjk" style="width:NaNpx">を</span><span class="ace_cjk" style="width:NaNpx">選</span><span class="ace_cjk" style="width:NaNpx">択</span>
+</div><div class="ace_line">kibrary_operation io.github.kensuke1984.kibrary.util.spc.SPC_SAC20200424171111.properties
+</div></div></div></pre>
+<ol start="2">
+<li>今回はSPC_SAC.propertiesの中身は編集しませんでしたが、次回中身を説明して編集してみます.</li>
+</ol>
+<h4>(iii) SACの使い方</h4>
+<ol>
+<li>以下の内容を.bash_profileに書き加える.</li>
+</ol>
+<pre><div class="ace-tomorrow-night-eighties"><div class="ace_static_highlight" style="counter-reset:ace_line 0"><div class="ace_line">export SACHOME="/usr/local/sac"
+</div><div class="ace_line">export SACAUX="${SACHOME}/aux"
+</div><div class="ace_line">export PATH=${SACHOME}/bin:$PATH
+</div></div></div></pre>
+<p>保存して<code>source ~/.nash_profile</code>を実行.</p>
+<ol start="2">
+<li>SACを起動して波形ファイルを読み込み、プロットしてみる.</li>
+</ol>
+<pre><div class="ace-tomorrow-night-eighties"><div class="ace_static_highlight" style="counter-reset:ace_line 0"><div class="ace_line">sac #SAC<span class="ace_cjk" style="width:NaNpx">を</span><span class="ace_cjk" style="width:NaNpx">起</span><span class="ace_cjk" style="width:NaNpx">動</span>
+</div><div class="ace_line">SAC&gt; read ABC.201506231218A.Zs
+</div><div class="ace_line">SAC&gt; plot
+</div></div></div></pre>
+</div><div class="cell markdown-cell"><hr>
+<hr>
+</div><div class="cell markdown-cell"></div><div class="cell markdown-cell"><h2>課題</h2>
+<p><strong>*興味がある人、時間がある人は以下のことを次回までに試してみてください. 課題0は上で言及したサンプルファイルをTAが修正したもので"2.2 DSM実行"を行うものです.</strong></p>
+<ol start="0">
+<li>
+<p>/mnt/lasagna/suzuki/Ensyu2020/DSMrun/twoStationsを作業フォルダにコピーして、twoStations/201506231218Aに移動してください. そこで<code>mpirun</code>を実行.</p>
+</li>
+<li>
+<p>課題1で用いたインプットファイル（*_SH.inf/*_PSV.inf）の観測点位置や震源半径（それ以外のパラメータは変更しない）を変更して計算してみる. その際に、同じ場所で計算を実行すると上書きされるので、別の場所に同様のディレクトリ構造を用意して計算を行うことに注意. その後、SPC_SACでSAC形式に変換しSACでプロットして波形を見てみてください.<br>
+その際、以下のSACコマンドを試してみてください. 出力ファイルの出力先フォルダMISAPを作成するのを忘れないようにしてください.</p>
+</li>
+</ol>
+<pre><div class="ace-tomorrow-night-eighties"><div class="ace_static_highlight" style="counter-reset:ace_line 0"><div class="ace_line">SAC&gt; read 'SAC<span class="ace_cjk" style="width:NaNpx">フ</span><span class="ace_cjk" style="width:NaNpx">ァ</span><span class="ace_cjk" style="width:NaNpx">イ</span><span class="ace_cjk" style="width:NaNpx">ル</span>'
+</div><div class="ace_line">SAC&gt; plot
+</div><div class="ace_line">SAC&gt; xlim 100 1000 #x<span class="ace_cjk" style="width:NaNpx">軸</span>(<span class="ace_cjk" style="width:NaNpx">時</span><span class="ace_cjk" style="width:NaNpx">間</span><span class="ace_cjk" style="width:NaNpx">軸</span>)<span class="ace_cjk" style="width:NaNpx">の</span><span class="ace_cjk" style="width:NaNpx">範</span><span class="ace_cjk" style="width:NaNpx">囲</span><span class="ace_cjk" style="width:NaNpx">の</span><span class="ace_cjk" style="width:NaNpx">設</span><span class="ace_cjk" style="width:NaNpx">定</span>
+</div><div class="ace_line">SAC&gt; xlim off #<span class="ace_cjk" style="width:NaNpx">時</span><span class="ace_cjk" style="width:NaNpx">間</span><span class="ace_cjk" style="width:NaNpx">軸</span><span class="ace_cjk" style="width:NaNpx">範</span><span class="ace_cjk" style="width:NaNpx">囲</span><span class="ace_cjk" style="width:NaNpx">設</span><span class="ace_cjk" style="width:NaNpx">定</span><span class="ace_cjk" style="width:NaNpx">の</span>off
+</div><div class="ace_line">SAC&gt; ylim -1e-8 1e-8 #y<span class="ace_cjk" style="width:NaNpx">軸</span>(<span class="ace_cjk" style="width:NaNpx">振</span><span class="ace_cjk" style="width:NaNpx">幅</span><span class="ace_cjk" style="width:NaNpx">軸</span>)<span class="ace_cjk" style="width:NaNpx">の</span><span class="ace_cjk" style="width:NaNpx">範</span><span class="ace_cjk" style="width:NaNpx">囲</span><span class="ace_cjk" style="width:NaNpx">の</span><span class="ace_cjk" style="width:NaNpx">設</span><span class="ace_cjk" style="width:NaNpx">定</span>
+</div><div class="ace_line">SAC&gt; ylim off #<span class="ace_cjk" style="width:NaNpx">振</span><span class="ace_cjk" style="width:NaNpx">幅</span><span class="ace_cjk" style="width:NaNpx">範</span><span class="ace_cjk" style="width:NaNpx">囲</span><span class="ace_cjk" style="width:NaNpx">設</span><span class="ace_cjk" style="width:NaNpx">定</span><span class="ace_cjk" style="width:NaNpx">の</span>off
+</div><div class="ace_line">SAC&gt; read 'SAC<span class="ace_cjk" style="width:NaNpx">フ</span><span class="ace_cjk" style="width:NaNpx">ァ</span><span class="ace_cjk" style="width:NaNpx">イ</span><span class="ace_cjk" style="width:NaNpx">ル</span>1' 'SAC<span class="ace_cjk" style="width:NaNpx">フ</span><span class="ace_cjk" style="width:NaNpx">ァ</span><span class="ace_cjk" style="width:NaNpx">イ</span><span class="ace_cjk" style="width:NaNpx">ル</span>2' #2<span class="ace_cjk" style="width:NaNpx">つ</span><span class="ace_cjk" style="width:NaNpx">の</span>SAC<span class="ace_cjk" style="width:NaNpx">フ</span><span class="ace_cjk" style="width:NaNpx">ァ</span><span class="ace_cjk" style="width:NaNpx">イ</span><span class="ace_cjk" style="width:NaNpx">ル</span><span class="ace_cjk" style="width:NaNpx">を</span><span class="ace_cjk" style="width:NaNpx">同</span><span class="ace_cjk" style="width:NaNpx">時</span><span class="ace_cjk" style="width:NaNpx">に</span><span class="ace_cjk" style="width:NaNpx">読</span><span class="ace_cjk" style="width:NaNpx">み</span><span class="ace_cjk" style="width:NaNpx">込</span><span class="ace_cjk" style="width:NaNpx">み</span>
+</div><div class="ace_line">SAC&gt; plot1 #2<span class="ace_cjk" style="width:NaNpx">つ</span><span class="ace_cjk" style="width:NaNpx">の</span><span class="ace_cjk" style="width:NaNpx">波</span><span class="ace_cjk" style="width:NaNpx">形</span><span class="ace_cjk" style="width:NaNpx">を</span><span class="ace_cjk" style="width:NaNpx">並</span><span class="ace_cjk" style="width:NaNpx">べ</span><span class="ace_cjk" style="width:NaNpx">て</span><span class="ace_cjk" style="width:NaNpx">表</span><span class="ace_cjk" style="width:NaNpx">示</span>
+</div><div class="ace_line">SAC&gt; plot2 #2<span class="ace_cjk" style="width:NaNpx">つ</span><span class="ace_cjk" style="width:NaNpx">の</span><span class="ace_cjk" style="width:NaNpx">波</span><span class="ace_cjk" style="width:NaNpx">形</span><span class="ace_cjk" style="width:NaNpx">を</span><span class="ace_cjk" style="width:NaNpx">重</span><span class="ace_cjk" style="width:NaNpx">ね</span><span class="ace_cjk" style="width:NaNpx">て</span><span class="ace_cjk" style="width:NaNpx">表</span><span class="ace_cjk" style="width:NaNpx">示</span>
+</div></div></div></pre>
+<ol start="2">
+<li>/mnt/lasagna/suzuki/Ensyu2020/DSMrun/manyStationsをコピーしてDSMを実行してみてください. このディレクトリの直下に201506231218Aのディレクトリがあります. 計算を行うときは、201506231218Aに移動して実行してください.  出力先のディレクトリ(MIASP)も用意しているので、その中に出力されると思います. 出力された*.spcはSPC_SACでSAC形式に変換.</li>
+</ol>
+</div></div>
+      <script>document.body.onkeyup = function(e) {
+if (e.keyCode === 39) window.location.href = '第一回（Apr. 22, 2020）.html';
+if (e.keyCode === 37) window.location.href = '第三回（Apr. 28, 2020）.html';
+}</script>
+    </body>
+    </html>
+  
