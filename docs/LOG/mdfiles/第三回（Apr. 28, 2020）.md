@@ -68,7 +68,7 @@ timePartial
 3. dVpVsRho.pltの中身を書き換えてyrange, xrange等を変えてプロットしてみる.
 4. `gnuplot dVpVsRho.plt`で実行
 5. `evince MIASP_PSV.eps`で出力
-6. 以下のような図が得られる
+6. 右のような図が得られる
 ![IMAGE](resources/920C63DE0BC867169EE95BCA212025A4.jpg "sample structure")
 
 ---
