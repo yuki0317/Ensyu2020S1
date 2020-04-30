@@ -17,7 +17,7 @@
 - ローカルマシンがwindowsの場合VNCviewer等のソフトウェアが必要. VNCserver欄に'localhost:5901'等と入力してConnect
 - Macの場合はFinderからサーバへ接続. サーバアドレスはvnc://localhost:5901等
 - 成功すると以下のような画面が表示される
-![IMAGE](resources/FBD07FF5152ED277E40B88D2F1E6C5A9.jpg =1279x788)
+![IMAGE](./resources/FBD07FF5152ED277E40B88D2F1E6C5A9.jpg =1279x788)
 
 ---
 ---
@@ -28,7 +28,7 @@
 - np: Number of points
 - 構造の情報は、ある半径区間において多項式形式で表される.
 - 例えばある半径$r$での密度$\rho$は以下のように表される。
-  $$\rho(r/R) = a + b*(r/R)^1 + c*(r/R)^2 + d*(r/R)^3$$
+  $\rho(r/R) = a + b*(r/R)^1 + c*(r/R)^2 + d*(r/R)^3$
   ここで$R$は地球半径で$R=6371$.
 - SHとPSVでは構造layerの数等が異なるので注意.
 - 震源パラメータは、震源重心位置の半径と緯度、経度、モーメントテンソル解
