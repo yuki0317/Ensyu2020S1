@@ -17,7 +17,7 @@
 - ローカルマシンがwindowsの場合VNCviewer等のソフトウェアが必要. VNCserver欄に'localhost:5901'等と入力してConnect
 - Macの場合はFinderからサーバへ接続. サーバアドレスはvnc://localhost:5901等
 - 成功すると以下のような画面が表示される
-![IMAGE](./resources/FBD07FF5152ED277E40B88D2F1E6C5A9.jpg =1279x788)
+![IMAGE](./resources/FBD07FF5152ED277E40B88D2F1E6C5A9.jpg "sample")
 
 ---
 ---
