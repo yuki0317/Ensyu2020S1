@@ -69,7 +69,7 @@ timePartial
 4. `gnuplot dVpVsRho.plt`で実行
 5. `evince MIASP_PSV.eps`で出力
 6. 以下のような図が得られる
-![IMAGE](resources/920C63DE0BC867169EE95BCA212025A4.jpg =661x1061)
+![IMAGE](resources/920C63DE0BC867169EE95BCA212025A4.jpg "sample structure")
 
 ---
 ---
