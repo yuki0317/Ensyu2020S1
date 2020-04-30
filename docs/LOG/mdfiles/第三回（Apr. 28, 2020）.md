@@ -1,10 +1,10 @@
-#本日の実習内容
-##論文購読
+# 本日の実習内容
+## 論文購読
 Geller & Ohminato (1994, GJI) 第２章
-##実習（予定）
+## 実習
 1. SPC_SAC.propertiesの中身を説明
 2. 仮定した地球内部構造（1次元; 半径rのみの関数）をプロット
-3. Record section（地震波形記録を震央距離や方位角順に並べてプロットしたもの）の作成
+3. Record section（地震波形記録を震央距離や方位角順に並べてプロットしたもの）の作成（次回に変更）
 
 ---
 ---
@@ -12,7 +12,7 @@ Geller & Ohminato (1994, GJI) 第２章
 # 実習
 [Skype会議](https://join.skype.com/YsHD0ReeJ1xa)15:30~
 
-##1. SPC_SAC.propertiesの中身
+## 1. SPC_SAC.propertiesの中身
 ```
 manhattan SPC_SAC
 ##Path of a working folder (.)
@@ -60,7 +60,7 @@ timePartial
 ---
 ---
 
-##2. 仮定した地球内部構造（1次元; 半径rのみの関数）をプロット
+## 2. 仮定した地球内部構造（1次元; 半径rのみの関数）をプロット
 サンプルコードの場所：/mnt/lasagna/suzuki/Ensyu2020/structure/scripts
 
 1. MIASP_PSV.polyのようにDSMのインプットファイルの構造のみを取り出したファイルを用意する. 
@@ -74,11 +74,11 @@ timePartial
 ---
 ---
 
-##3. Record sectionの作成
+## 3. Record sectionの作成
 サンプルコードの場所：/mnt/lasagna/suzuki/Ensyu2020/recordSection/recordSection.sh
 詳細は次回.
 
 ---
 ---
 
-##課題
+## 課題
