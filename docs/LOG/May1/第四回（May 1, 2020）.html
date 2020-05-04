@@ -23,7 +23,7 @@
       <style> .text-cell {font-size: 15px;}.code-cell {font-size: 12px;}.markdown-cell {font-size: 15px;}.latex-cell {font-size: 15px;}</style>
     </head>
     <body>
-      <div id="nav"><div>Next: <a href='../Apr30/第三回（Apr. 28, 2020）.html'>第三回（Apr. 28, 2020）</a>, Up: <a href='../contents.html'>Index</a></div></div>
+      <div id="nav"><div>Next: <a href='第三回（Apr. 28, 2020）.html'>第三回（Apr. 28, 2020）</a>, Up: <a href='index.html'>Index</a></div></div>
       <div id="titlearea">
         <h2>第四回（May 1, 2020）</h2>
       </div>
@@ -49,6 +49,10 @@
 </div><div class="cell markdown-cell"><h1>実習</h1>
 <p><a href="https://join.skype.com/YsHD0ReeJ1xa">Skype会議</a>15:00~</p>
 <p><strong>サンプルコードの場所：/mnt/lasagna/suzuki/Ensyu2020/recordSection</strong></p>
+<h2>0. 理論波形計算</h2>
+<ul>
+<li>第三回の「3. Record section 作成準備」を参考に理論波形計算を実行し、SAC形式に変換しておく.</li>
+</ul>
 <h2>1. 震源時間関数の畳み込み</h2>
 <ol>
 <li>ガウシアン型の震源時間関数を畳み込み. 震源時間関数のファイルは、/mnt/lasagna/suzuki/Ensyu2020/gaussian/gaussian*s.sacを用いる. gaussian*s.sacはSACで読み込み・描画可能なので各自確認してみてください. 以下は例.<br>
@@ -77,7 +81,7 @@
 <ol start="0">
 <li>上記の通り、複数の震源時間関数（例えばgaussian10s.sac、gaussian4s.sac、gaussian20s.sac...）をの形をSACやGnuplotで描画してみる. またそれらをDSMで計算して理論波形(*.Ts/*.Rs/*.Zs)に畳み込んで波形の違いを観察してみる.</li>
 <li>上記の<strong>サンプルコードの場所</strong>にスクリプト 例をアップロードするので、それを用いてRadial成分、Vertical成分のRecord sectionを作成してみてください.<br>
-<strong><font color="red"><u>*サンプルコードrecordSection.shをアップデートしました. Radial, Vertical成分のRecord sectionが描画できますので試してみてください. 実行結果の例は<a href='Record section sample.html'>こちら</a>.</u></font></strong></li>
+<strong><font color="red"><u>*サンプルコードrecordSection.shをアップデートしました. Radial, Vertical成分のRecord sectionが描画できますので試してみてください. 実行結果の例はこちら.</u></font></strong></li>
 </ol>
 </div></div>
       <script>document.body.onkeyup = function(e) {
