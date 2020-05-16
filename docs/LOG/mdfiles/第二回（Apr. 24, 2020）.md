@@ -1,4 +1,4 @@
-# 本日の実習内容
+#本日の実習内容
 1. 画面共有の環境設定
 2. DSMを用いた理論波形計算
 3. 計算結果(SPCファイル)をSAC形式へ変換（SACは時系列データ特に地震波形のプロット・解析のためのツール）
@@ -6,7 +6,7 @@
 # 実習
 [Skype会議](https://join.skype.com/YsHD0ReeJ1xa)15:00~18:20
 
-## 1. 画面共有設定
+##1. 画面共有設定
 - waveは学内ネットワークにアクセスするための踏み台サーバ、ajilloは高速計算サーバ
 - 画面共有のためのサーバmariejoisにアカウント作成（済み &rarr; pw変更）
 - VNC server起動（**ポート番号注意**）
@@ -17,18 +17,18 @@
 - ローカルマシンがwindowsの場合VNCviewer等のソフトウェアが必要. VNCserver欄に'localhost:5901'等と入力してConnect
 - Macの場合はFinderからサーバへ接続. サーバアドレスはvnc://localhost:5901等
 - 成功すると以下のような画面が表示される
-![IMAGE](./resources/FBD07FF5152ED277E40B88D2F1E6C5A9.jpg "sample")
+![IMAGE](resources/FBD07FF5152ED277E40B88D2F1E6C5A9.jpg =1279x788)
 
 ---
 ---
 
-## 2. 理論波形計算
-### 2.1 DSMインプットファイルの中身
+##2. 理論波形計算
+###2.1 DSMインプットファイルの中身
 - tlen: 地震波形の時間長
 - np: Number of points
 - 構造の情報は、ある半径区間において多項式形式で表される.
 - 例えばある半径$r$での密度$\rho$は以下のように表される。
-  $\rho(r/R) = a + b*(r/R)^1 + c*(r/R)^2 + d*(r/R)^3$
+  $$\rho(r/R) = a + b*(r/R)^1 + c*(r/R)^2 + d*(r/R)^3$$
   ここで$R$は地球半径で$R=6371$.
 - SHとPSVでは構造layerの数等が異なるので注意.
 - 震源パラメータは、震源重心位置の半径と緯度、経度、モーメントテンソル解
@@ -38,18 +38,18 @@
 
 
 
-### 2.2 DSM実行
+###2.2 DSM実行
 - MPI（並列計算）実行
 ``mpirun -n 4 mpi-tish < MIASP_SH.inf``
 ここでは/mnt/lasagna/suzuki/Ensyu2020/structure/MIASP_SH.inf
 /mnt/lasagna/suzuki/Ensyu2020/structure/MIASP_PSV.infを用いる.
-**実習終了後に上のサンプルファイルをtlen=3276.8, np=1024に変更しました. また出力ファイル名も変更しました. 実習中に計算してもらった出力ファイル名では、kibraryの仕様の関係でSPC_SACが実行できない可能性があったので. TAが試したところ4並列(-n 4)で実行してせいぜい5分くらいで終わると思います. 時間があれば試してみてください.**
+***実習終了後に上のサンプルファイルをtlen=3276.8, np=1024に変更しました. また出力ファイル名も変更しました. 実習中に計算してもらった出力ファイル名では、kibraryの仕様の関係でSPC_SACが実行できない可能性があったので. TAが試したところ4並列(-n 4)で実行してせいぜい5分くらいで終わると思います. 時間があれば試してみてください.**
 
 
-### 2.3 計算結果(\*.spcファイル)を時系SAC形式(\*.[R,T,Z]s)に変換
+###2.3 計算結果(\*.spcファイル)を時系SAC形式(\*.[R,T,Z]s)に変換
 - 演習ではTAが用意したサンプル(/mnt/lasagna/suzuki/Ensyu2020/samplespc)で試しました.
 
-#### (i) 事前準備
+####(i) 事前準備
   1. [Kibray](https://github.com/kensuke1984/Kibrary)からkibraryをインストール.
   2. .bash_profileに以下のおまじないを貼り付ける.
 ```
@@ -57,7 +57,7 @@ export PATH=/home/???/Kibrary/bin:$PATH
 export CLASSPATH=/home/???/Kibrary/bin/kibrary-0.4.8.jar:$CLASSPATH
 ```
 
-#### (ii) \*.spcの変換
+####(ii) \*.spcの変換
 1. SPC_SACを実行する.
 ```
 kibrary_property #実行するとリストが表示されるのでSPC_SAC(14)を選択
@@ -65,7 +65,7 @@ kibrary_operation io.github.kensuke1984.kibrary.util.spc.SPC_SAC20200424171111.p
 ```
 2. 今回はSPC_SAC.propertiesの中身は編集しませんでしたが、次回中身を説明して編集してみます.
 
-#### (iii) SACの使い方
+####(iii) SACの使い方
 1. 以下の内容を.bash_profileに書き加える.
 
 ```
