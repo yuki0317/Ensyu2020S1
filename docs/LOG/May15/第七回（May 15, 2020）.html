@@ -1,0 +1,94 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- common.css -->
+      <style>* {-webkit-tap-highlight-color: rgba(0,0,0,0);}html {-webkit-text-size-adjust: none;}body {font-family: -apple-system, Helvetica, Arial, sans-serif;margin: 0;padding: 20px;color: #333;word-wrap: break-word;}h1, h2, h3, h4, h5, h6 {line-height: 1.1;}img {max-width: 100% !important;height: auto;}blockquote {margin: 0;padding: 0 15px;color: #777;border-left: 4px solid #ddd;}hr {background-color: #ddd;border: 0;height: 1px;margin: 15px 0;}code {font-family: Menlo, Consolas, 'Ubuntu Mono', Monaco, 'source-code-pro', monospace;line-height: 1.4;margin: 0;padding: 0.2em 0;font-size: 90%;background-color: rgba(0,0,0,0.04);border-radius: 3px;}pre > code {margin: 0;padding: 0;font-size: 100%;word-break: normal;background: transparent;border: 0;}ol {list-style-type: decimal;}ol ol, ul ol {list-style-type: lower-latin;}ol ol ol, ul ol ol, ul ul ol, ol ul ol {list-style-type: lower-roman;}table {border-spacing: 0;border-collapse: collapse;margin-top: 0;margin-bottom: 16px;}table th {font-weight: bold;}table th, table td {padding: 6px 13px;border: 1px solid #ddd;}table tr {border-top: 1px solid #ccc;}table tr:nth-child(even) {background-color: #f8f8f8;}input[type="checkbox"] {cursor: default;margin-right: 0.5em;font-size: 13px;}.task-list-item {list-style-type: none;}.task-list-item+.task-list-item {margin-top: 3px;}.task-list-item input {float: left;margin: 0.3em 1em 0.25em -1.6em;vertical-align: middle;}#tag-field {margin: 8px 2px 10px;}#tag-field .tag {display: inline-block;background: #cadff3;border-radius: 4px;padding: 1px 8px;color: black;font-size: 12px;margin-right: 10px;line-height: 1.4;}</style>
+      <!-- ace-static.css -->
+      <style>.ace_static_highlight {white-space: pre-wrap;}.ace_static_highlight .ace_gutter {width: 2em;text-align: right;padding: 0 3px 0 0;margin-right: 3px;}.ace_static_highlight.ace_show_gutter > .ace_line {padding-left: 2.6em;}.ace_static_highlight .ace_line {position: relative;}.ace_static_highlight .ace_gutter-cell {-moz-user-select: -moz-none;-khtml-user-select: none;-webkit-user-select: none;user-select: none;top: 0;bottom: 0;left: 0;position: absolute;}.ace_static_highlight .ace_gutter-cell:before {content: counter(ace_line, decimal);counter-increment: ace_line;}.ace_static_highlight {counter-reset: ace_line;}</style>
+      <style>.ace-tomorrow-night-eighties .ace_gutter {background: #272727;color: #CCC}.ace-tomorrow-night-eighties .ace_print-margin {width: 1px;background: #272727}.ace-tomorrow-night-eighties {background-color: #2D2D2D;color: #CCCCCC}.ace-tomorrow-night-eighties .ace_constant.ace_other,.ace-tomorrow-night-eighties .ace_cursor {color: #CCCCCC}.ace-tomorrow-night-eighties .ace_marker-layer .ace_selection {background: #515151}.ace-tomorrow-night-eighties.ace_multiselect .ace_selection.ace_start {box-shadow: 0 0 3px 0px #2D2D2D;}.ace-tomorrow-night-eighties .ace_marker-layer .ace_step {background: rgb(102, 82, 0)}.ace-tomorrow-night-eighties .ace_marker-layer .ace_bracket {margin: -1px 0 0 -1px;border: 1px solid #6A6A6A}.ace-tomorrow-night-bright .ace_stack {background: rgb(66, 90, 44)}.ace-tomorrow-night-eighties .ace_marker-layer .ace_active-line {background: #393939}.ace-tomorrow-night-eighties .ace_gutter-active-line {background-color: #393939}.ace-tomorrow-night-eighties .ace_marker-layer .ace_selected-word {border: 1px solid #515151}.ace-tomorrow-night-eighties .ace_invisible {color: #6A6A6A}.ace-tomorrow-night-eighties .ace_keyword,.ace-tomorrow-night-eighties .ace_meta,.ace-tomorrow-night-eighties .ace_storage,.ace-tomorrow-night-eighties .ace_storage.ace_type,.ace-tomorrow-night-eighties .ace_support.ace_type {color: #CC99CC}.ace-tomorrow-night-eighties .ace_keyword.ace_operator {color: #66CCCC}.ace-tomorrow-night-eighties .ace_constant.ace_character,.ace-tomorrow-night-eighties .ace_constant.ace_language,.ace-tomorrow-night-eighties .ace_constant.ace_numeric,.ace-tomorrow-night-eighties .ace_keyword.ace_other.ace_unit,.ace-tomorrow-night-eighties .ace_support.ace_constant,.ace-tomorrow-night-eighties .ace_variable.ace_parameter {color: #F99157}.ace-tomorrow-night-eighties .ace_invalid {color: #CDCDCD;background-color: #F2777A}.ace-tomorrow-night-eighties .ace_invalid.ace_deprecated {color: #CDCDCD;background-color: #CC99CC}.ace-tomorrow-night-eighties .ace_fold {background-color: #6699CC;border-color: #CCCCCC}.ace-tomorrow-night-eighties .ace_entity.ace_name.ace_function,.ace-tomorrow-night-eighties .ace_support.ace_function,.ace-tomorrow-night-eighties .ace_variable {color: #6699CC}.ace-tomorrow-night-eighties .ace_support.ace_class,.ace-tomorrow-night-eighties .ace_support.ace_type {color: #FFCC66}.ace-tomorrow-night-eighties .ace_heading,.ace-tomorrow-night-eighties .ace_markup.ace_heading,.ace-tomorrow-night-eighties .ace_string {color: #99CC99}.ace-tomorrow-night-eighties .ace_comment {color: #999999}.ace-tomorrow-night-eighties .ace_entity.ace_name.ace_tag,.ace-tomorrow-night-eighties .ace_entity.ace_other.ace_attribute-name,.ace-tomorrow-night-eighties .ace_meta.ace_tag,.ace-tomorrow-night-eighties .ace_variable {color: #F2777A}.ace-tomorrow-night-eighties .ace_indent-guide {background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAEklEQVQImWPQ09NrYAgMjP4PAAtGAwchHMyAAAAAAElFTkSuQmCC) right repeat-y}</style>
+      <!-- export.css -->
+      <style>
+        body{margin:0 auto;max-width:800px;line-height:1.4}
+        #nav{margin:5px 0 10px;font-size:15px}
+        #titlearea{border-bottom:1px solid #ccc;font-size:17px;padding:10px 0;}
+        #contentarea{font-size:15px;margin:16px 0}
+        .cell{outline:0;min-height:20px;margin:5px 0;padding:5px 0;}
+        .code-cell{font-family:Menlo,Consolas,'Ubuntu Mono',Monaco,'source-code-pro',monospace;font-size:12px;}
+        .latex-cell{white-space:pre-wrap;}
+      </style>
+      <!-- User CSS -->
+      <style> .text-cell {font-size: 15px;}.code-cell {font-size: 12px;}.markdown-cell {font-size: 15px;}.latex-cell {font-size: 15px;}</style>
+    </head>
+    <body>
+      <div id="nav"><div>Next: <a href='第六回（May 12, 2020）.html'>第六回（May 12, 2020）</a>, Previous: <a href='第五回（May 8, 2020）.html'>第五回（May 8, 2020）</a>, Up: <a href='../contents.html'>Index</a></div></div>
+      <div id="titlearea">
+        <h2>第七回（May 15, 2020）</h2>
+      </div>
+      <div id="contentarea"><div class="cell markdown-cell"><h1>本日の実習内容</h1>
+<h2>実習（予定）</h2>
+<ol>
+<li>F layerの<span class="MathJax" id="MathJax-Element-29-Frame" role="textbox" aria-readonly="true" style=""><nobr><span class="math" id="MathJax-Span-121" style="width: 1.328em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1.182em; height: 0px; font-size: 111%;"><span style="position: absolute; clip: rect(1.374em, 1000em, 2.515em, -0.431em); top: -2.196em; left: 0em;"><span class="mrow" id="MathJax-Span-122"><span class="msubsup" id="MathJax-Span-123"><span style="display: inline-block; position: relative; width: 1.18em; height: 0px;"><span style="position: absolute; clip: rect(1.712em, 1000em, 2.721em, -0.431em); top: -2.534em; left: 0em;"><span class="mi" id="MathJax-Span-124" style="font-family: STIXGeneral-Italic;">V<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.077em;"></span></span><span style="display: inline-block; width: 0px; height: 2.534em;"></span></span><span style="position: absolute; top: -2.159em; left: 0.655em;"><span class="mi" id="MathJax-Span-125" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">P</span><span style="display: inline-block; width: 0px; height: 2.309em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.196em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 1.016em; vertical-align: -0.229em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-29">V_P</script>構造に摂動（速度異常）を与えた1次元モデルを作成</li>
+<li>F layerの<span class="MathJax" id="MathJax-Element-29-Frame" role="textbox" aria-readonly="true" style=""><nobr><span class="math" id="MathJax-Span-121" style="width: 1.328em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1.182em; height: 0px; font-size: 111%;"><span style="position: absolute; clip: rect(1.374em, 1000em, 2.515em, -0.431em); top: -2.196em; left: 0em;"><span class="mrow" id="MathJax-Span-122"><span class="msubsup" id="MathJax-Span-123"><span style="display: inline-block; position: relative; width: 1.18em; height: 0px;"><span style="position: absolute; clip: rect(1.712em, 1000em, 2.721em, -0.431em); top: -2.534em; left: 0em;"><span class="mi" id="MathJax-Span-124" style="font-family: STIXGeneral-Italic;">V<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.077em;"></span></span><span style="display: inline-block; width: 0px; height: 2.534em;"></span></span><span style="position: absolute; top: -2.159em; left: 0.655em;"><span class="mi" id="MathJax-Span-125" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">P</span><span style="display: inline-block; width: 0px; height: 2.309em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.196em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 1.016em; vertical-align: -0.229em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-29">V_P</script>構造に摂動（速度異常）を与えた波形を計算しRecord sectionをプロット</li>
+<li>差分波形のRecord sectionを作成</li>
+<li>Kaneshima&amp;Helffrich(2010)のような理論波形・差分波形のRecordsectionの図を作成</li>
+<li>Sensitivi kernelのプロットに向けて</li>
+</ol>
+<hr>
+<hr>
+</div><div class="cell markdown-cell"><h2>実習</h2>
+<h3>1–3. 外核最下部にPは速度異常を与えたときの差分波形Record section作成</h3>
+<p>a. <code>/mnt/lasagna/suzuki/Ensyu2020/perturb-F-Vp</code>に外核最下部（F層）の<span class="MathJax" id="MathJax-Element-29-Frame" role="textbox" aria-readonly="true" style=""><nobr><span class="math" id="MathJax-Span-121" style="width: 1.328em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1.182em; height: 0px; font-size: 111%;"><span style="position: absolute; clip: rect(1.374em, 1000em, 2.515em, -0.431em); top: -2.196em; left: 0em;"><span class="mrow" id="MathJax-Span-122"><span class="msubsup" id="MathJax-Span-123"><span style="display: inline-block; position: relative; width: 1.18em; height: 0px;"><span style="position: absolute; clip: rect(1.712em, 1000em, 2.721em, -0.431em); top: -2.534em; left: 0em;"><span class="mi" id="MathJax-Span-124" style="font-family: STIXGeneral-Italic;">V<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.077em;"></span></span><span style="display: inline-block; width: 0px; height: 2.534em;"></span></span><span style="position: absolute; top: -2.159em; left: 0.655em;"><span class="mi" id="MathJax-Span-125" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">P</span><span style="display: inline-block; width: 0px; height: 2.309em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.196em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 1.016em; vertical-align: -0.229em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-29">V_P</script>に-1%の速度異常を与えた構造を用意したので自分の作業スペースにコピーして計算する.</p>
+<h3>4. Kaneshima&amp;Helffrich(2010)のFig.1と同様の理論波形・差分波形のRecordsectionの図を作成</h3>
+<ul>
+<li>次回に回しました. 課題に記載した追加の計算をよろしくお願いします.</li>
+</ul>
+<h3>5.Sensitivity kernelの作成に向けて</h3>
+<p>a. <code>/mnt/lasagna/suzuki/Ensyu2020/sensitivity</code>を丸ごと作業スペースにコピー<br>
+- <code>tar xvfz shbp-mpi-0.1.0.tar.gz</code><br>
+b. <code>/mnt/lasagna/suzuki/Ensyu2020/src</code>から3D偏微分係数波形計算ソフトを<code>~/bin</code>にコピーして解凍→コンパイル.<br>
+<strong><em>* - mpi-shbp.f内のパラメータmaxnstackを200に修正してから<code>make</code>する.</em></strong><br>
+c. 作業場所に戻って<code>kibrary_property</code>で<strong>7</strong>を選択.<br>
+d. ifm.propertiesの中身を以下のように編集.</p>
+<pre><div class="ace-tomorrow-night-eighties"><div class="ace_static_highlight" style="counter-reset:ace_line 0"><div class="ace_line">manhattan InformationFileMaker 
+</div><div class="ace_line">##Path of a working folder (.) 
+</div><div class="ace_line">#workPath 
+</div><div class="ace_line">##Path of an information file for locations of perturbation point, must be set 
+</div><div class="ace_line">locationsPath pointLocations.inf 
+</div><div class="ace_line">##Path of a station information file, must be set 
+</div><div class="ace_line">stationInformationPath station.inf 
+</div><div class="ace_line">##header for names of information files 'header'_[PSV, SH].inf (PREM) 
+</div><div class="ace_line">header MIASP 
+</div><div class="ace_line">##int NP must be a power of 2, must be set 
+</div><div class="ace_line">NP 1024 
+</div><div class="ace_line">##double TLEN must be a power of 2/10, must be set 
+</div><div class="ace_line">TLEN 3276.8 
+</div><div class="ace_line">##polynomial structure file (can be blank) 
+</div><div class="ace_line">##if this is blank or doesn't exist model is an initial PREM 
+</div><div class="ace_line">structureFile MIASP_PSV.inf
+</div></div></div></pre>
+<p>e. <code>kibrary_operation ifm.properties</code>で3D partial計算のインプットファイルを作成.<br>
+f. BPinfo内に移動して<code>mpirun -n 8 ~/bin/SHBP_src/shbp-mpi-0.1.0/mpi-shbp &lt; MIASP_SH.inf</code>で実行.<br>
+g. まずはBPinfo, FPinfoそれぞれのSHのみを実行. PSVは週末に計算してください.</p>
+</div><div class="cell markdown-cell"><h2>課題</h2>
+<ol>
+<li>今震央距離0–140(˚)までの理論波形を計算済みなので、141–180(˚)の理論波形を追加で計算.</li>
+</ol>
+<ul>
+<li>MIASP4RS, perturb-Ep-Vp, perturb-Fp-Vpの全て</li>
+<li>DSMのインプットファイルの観測点の情報の箇所を書き換える（緯度は0˚のまま、経度を141–180˚に変更. 観測点名を141から180に変更.)</li>
+<li><code>/mnt/lasagna/suzuki/Ensyu2020/additionalComputation4recordSection</code>に追加計算に必要なインプットファイルを置いていますのでこれらを使ってください.</li>
+</ul>
+<ol start="2">
+<li>3D partial計算. 特にBPinfo, FPinfoのPSV成分.</li>
+</ol>
+</div></div>
+      <script>document.body.onkeyup = function(e) {
+if (e.keyCode === 39) window.location.href = '第六回（May 12, 2020）.html';
+if (e.keyCode === 37) window.location.href = '第五回（May 8, 2020）.html';
+}</script>
+    </body>
+    </html>
+  
